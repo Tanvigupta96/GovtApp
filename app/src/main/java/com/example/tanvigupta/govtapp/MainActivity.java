@@ -125,18 +125,19 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.schemes) {
-            // Handle the camera action
+
+
         } else if (id == R.id.login) {
-          //  loginemail.setText(login);
-            Intent intent=new Intent(MainActivity.this,LoginActivity.class);
+            //  loginemail.setText(login);
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(intent);
-            } else if (id == R.id.discuss) {
-
-
-
+        } else if (id == R.id.discuss) {
 
 
         } else if (id == R.id.latest) {
+
+        } else if (id == R.id.complaintbox){
+
 
         } else if (id == R.id.nav_share) {
 

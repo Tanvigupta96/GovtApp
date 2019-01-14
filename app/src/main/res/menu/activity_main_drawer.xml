@@ -20,6 +20,10 @@
             android:id="@+id/latest"
             android:icon="@drawable/ic_feedback_grey_500_24dp"
             android:title="Latest Schemes" />
+        <item
+            android:id="@+id/complaintbox"
+            android:icon="@drawable/ic_move_to_inbox_grey_500_24dp"
+            android:title="Drop Complaints"/>
     </group>
 
     <item android:title="Communicate">
