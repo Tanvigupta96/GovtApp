@@ -46,21 +46,6 @@ public class MainActivity extends AppCompatActivity
         //get firebase auth instance
         auth=FirebaseAuth.getInstance();
 
-
-        //get current user
-        final FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
-
-        authListener =new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if(user==null){
-                    startActivity(new Intent(MainActivity.this,LoginActivity.class));
-                    finish();
-                }
-            }
-        };
-
-
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -107,7 +92,13 @@ public class MainActivity extends AppCompatActivity
 
         }else{
             if(id==R.id.signout){
-                auth.signOut();
+                AuthUI.getInstance().signOut(this).addOnCompleteListener(new OnCompleteListener<Void>(){
+                    public void onComplete(@NonNull Task<Void> task)
+                    {
+                        startActivity(new Intent(MainActivity.this,SplashActivity.class));
+                        finish();
+                    }
+                });
                 Toast.makeText(this,"You have been signed out",Toast.LENGTH_SHORT).show();
 
                 }

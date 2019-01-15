@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "623367015929-neecva65b3mcfp43djve7gv3r1nktfdo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tanvigupta.govtapp",
+            "certificate_hash": "fbdba25186fa16923123c5b52b4d136438a088ec"
+          }
+        },
+        {
           "client_id": "623367015929-v7bnq2kk8btgrhhrtvtse68jkorp0aet.apps.googleusercontent.com",
           "client_type": 3
         }
