@@ -1,5 +1,7 @@
 package com.example.tanvigupta.govtapp;
 
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,7 +36,9 @@ public class MainActivity extends AppCompatActivity
     private FirebaseAuth auth;
     private FirebaseAuth.AuthStateListener authListener;
     private TextView loginemail;
-    private String login;
+    private String login,com;
+    private FragmentManager fragmentManager;
+    private FragmentTransaction fragmentTransaction;
 
 
     @Override
@@ -43,6 +48,9 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        fragmentManager = getSupportFragmentManager();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        onFragmentInteraction();
         //get firebase auth instance
         auth=FirebaseAuth.getInstance();
 
@@ -116,8 +124,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.schemes) {
-
-
+            Schemes schemes = new Schemes();
+            fragmentTransaction.add(R.id.frag,schemes);
+            fragmentTransaction.commit();
+            onFragmentInteraction();
         } else if (id == R.id.login) {
             //  loginemail.setText(login);
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
@@ -128,7 +138,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.latest) {
 
         } else if (id == R.id.complaintbox){
-
+           Intent my = new Intent(this,Complaint.class);
+           startActivity(my);
 
         } else if (id == R.id.nav_share) {
 
@@ -140,6 +151,65 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    void onFragmentInteraction(){
+
+        Button btn1 = findViewById(R.id.btn1);
+        final Intent my = new Intent(this,Communication.class);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(my);
+            }
+        });
+
+        Button btn2 = findViewById(R.id.btn2);
+        final Intent my1 = new Intent(this,Commercial.class);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(my1);
+            }
+        });
+
+        Button btn3 = findViewById(R.id.btn3);
+        final Intent my2 = new Intent(this,rural.class);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(my2);
+            }
+        });
+
+        Button btn4 = findViewById(R.id.btn4);
+        final Intent my3 = new Intent(this,Health.class);
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(my3);
+            }
+        });
+
+        Button btn5 = findViewById(R.id.btn4);
+        final Intent my4 = new Intent(this,Education.class);
+        btn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(my4);
+            }
+        });
+
+        Button btn6 = findViewById(R.id.btn4);
+        final Intent my5 = new Intent(this,Transport.class);
+        btn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(my5);
+            }
+        });
+
+    }
+
 
 
 }
