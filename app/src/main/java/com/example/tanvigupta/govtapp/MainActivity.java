@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        Button btn5 = findViewById(R.id.btn4);
+        Button btn5 = findViewById(R.id.btn5);
         final Intent my4 = new Intent(this,Education.class);
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -199,7 +199,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        Button btn6 = findViewById(R.id.btn4);
+        Button btn6 = findViewById(R.id.btn6);
         final Intent my5 = new Intent(this,Transport.class);
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
