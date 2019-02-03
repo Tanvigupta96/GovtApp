@@ -20,7 +20,11 @@ public class Education extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
         setContentView(R.layout.activity_education);
+=======
+        setContentView(R.layout.activity_rural);
+>>>>>>> 737f1f3... tanvi's second commit
         f = findViewById(R.id.f1);
         f2 = findViewById(R.id.f2);
         f3 = findViewById(R.id.f3);

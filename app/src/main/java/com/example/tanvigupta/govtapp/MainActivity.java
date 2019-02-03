@@ -166,7 +166,11 @@ public class MainActivity extends AppCompatActivity
         });
 
         Button btn3 = findViewById(R.id.btn3);
+<<<<<<< HEAD
         final Intent my2 = new Intent(this,Rural.class);
+=======
+        final Intent my2 = new Intent(this,rural.class);
+>>>>>>> 737f1f3... tanvi's second commit
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -183,7 +187,11 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+<<<<<<< HEAD
         Button btn5 = findViewById(R.id.btn5);
+=======
+        Button btn5 = findViewById(R.id.btn4);
+>>>>>>> 737f1f3... tanvi's second commit
         final Intent my4 = new Intent(this,Education.class);
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -192,7 +200,11 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+<<<<<<< HEAD
         Button btn6 = findViewById(R.id.btn6);
+=======
+        Button btn6 = findViewById(R.id.btn4);
+>>>>>>> 737f1f3... tanvi's second commit
         final Intent my5 = new Intent(this,Transport.class);
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -74,6 +74,7 @@
 
                         </android.support.v7.widget.CardView>
 
+<<<<<<< HEAD
                         <LinearLayout
                             android:layout_marginTop="5dp"
                             android:layout_width="match_parent"
@@ -133,6 +134,8 @@
                             </LinearLayout>
                         </LinearLayout>
 
+=======
+>>>>>>> 737f1f3... tanvi's second commit
                     </LinearLayout>
 
                     <LinearLayout
@@ -257,6 +260,7 @@
 
                         </android.support.v7.widget.CardView>
 
+<<<<<<< HEAD
                         <LinearLayout
                             android:layout_marginTop="5dp"
                             android:layout_width="match_parent"
@@ -316,6 +320,8 @@
                             </LinearLayout>
                         </LinearLayout>
 
+=======
+>>>>>>> 737f1f3... tanvi's second commit
                     </LinearLayout>
 
                     <LinearLayout
@@ -441,6 +447,7 @@
 
                         </android.support.v7.widget.CardView>
 
+<<<<<<< HEAD
                         <LinearLayout
                             android:layout_marginTop="5dp"
                             android:layout_width="match_parent"
@@ -500,6 +507,8 @@
                             </LinearLayout>
                         </LinearLayout>
 
+=======
+>>>>>>> 737f1f3... tanvi's second commit
                     </LinearLayout>
 
                     <LinearLayout

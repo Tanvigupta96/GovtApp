@@ -15,7 +15,11 @@
         <activity android:name=".Transport" />
         <activity android:name=".Education" />
         <activity android:name=".Health" />
+<<<<<<< HEAD
         <activity android:name=".Rural" />
+=======
+        <activity android:name=".rural" />
+>>>>>>> 737f1f3... tanvi's second commit
         <activity android:name=".Commercial" />
         <activity android:name=".Communication" />
         <activity

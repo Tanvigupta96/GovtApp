@@ -2,11 +2,15 @@ package com.example.tanvigupta.govtapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+<<<<<<< HEAD
 import android.net.Uri;
+=======
+>>>>>>> 737f1f3... tanvi's second commit
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+<<<<<<< HEAD
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -16,12 +20,22 @@ import android.widget.ViewFlipper;
 import java.util.ArrayList;
 
 public class Commercial extends AppCompatActivity implements View.OnClickListener {
+=======
+import android.view.View;
+import android.widget.Button;
+import android.widget.ViewFlipper;
+
+public class Commercial extends AppCompatActivity {
+>>>>>>> 737f1f3... tanvi's second commit
 
     private ViewFlipper f,f2,f3;
     private CardView c,d,e,k,l,m;
     private Button b1,b2,b3;
     private AlertDialog.Builder alert;
+<<<<<<< HEAD
     private ImageButton documentation1,share1,documentation2,share2,documentation3,share3;
+=======
+>>>>>>> 737f1f3... tanvi's second commit
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +89,7 @@ public class Commercial extends AppCompatActivity implements View.OnClickListene
                 p5();
             }
         });
+<<<<<<< HEAD
         documentation1=findViewById(R.id.documentation1);
         share1=findViewById(R.id.share1);
         documentation2=findViewById(R.id.documentation2);
@@ -87,6 +102,8 @@ public class Commercial extends AppCompatActivity implements View.OnClickListene
         share2.setOnClickListener(this);
         documentation3.setOnClickListener(this);
         share3.setOnClickListener(this);
+=======
+>>>>>>> 737f1f3... tanvi's second commit
 
         alert = new AlertDialog.Builder(this);
 
@@ -265,6 +282,7 @@ public class Commercial extends AppCompatActivity implements View.OnClickListene
         f3.setOutAnimation(this,R.anim.out_right);
         f3.showPrevious();
     }
+<<<<<<< HEAD
 
     @Override
     public void onClick(View v) {
@@ -332,4 +350,6 @@ public class Commercial extends AppCompatActivity implements View.OnClickListene
 
 
     }
+=======
+>>>>>>> 737f1f3... tanvi's second commit
 }
