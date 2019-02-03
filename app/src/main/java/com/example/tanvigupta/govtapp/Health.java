@@ -2,19 +2,25 @@ package com.example.tanvigupta.govtapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ViewFlipper;
 
-public class Health extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class Health extends AppCompatActivity implements View.OnClickListener {
     private ViewFlipper f,f2,f3;
     private CardView c,d,e,k,l,m;
     private Button b1,b2,b3;
     private AlertDialog.Builder alert;
+    private ImageButton documentation1,share1,documentation2,share2,documentation3,share3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +73,19 @@ public class Health extends AppCompatActivity {
                 p5();
             }
         });
+        documentation1=findViewById(R.id.documentation1);
+        share1=findViewById(R.id.share1);
+        documentation2=findViewById(R.id.documentation2);
+        share2=findViewById(R.id.share2);
+        documentation3=findViewById(R.id.documentation3);
+        share3=findViewById(R.id.share3);
+        documentation1.setOnClickListener(this);
+        share1.setOnClickListener(this);
+        documentation2.setOnClickListener(this);
+        share2.setOnClickListener(this);
+        documentation3.setOnClickListener(this);
+        share3.setOnClickListener(this);
+
 
         alert = new AlertDialog.Builder(this);
 
@@ -212,6 +231,75 @@ public class Health extends AppCompatActivity {
         f3.setInAnimation(this,R.anim.in_left);
         f3.setOutAnimation(this,R.anim.out_right);
         f3.showPrevious();
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if(v.getId()==R.id.documentation1){
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            Uri uri=Uri.parse("http://vikaspedia.in/health/nrhm/national-health-programmes-1/pradhan-mantri-swasthya-suraksha-yojana-pmssy");
+            intent.setData(uri);
+            startActivity(intent);
+
+        }
+        else if(v.getId()==R.id.share1){
+            ArrayList<String> data=new ArrayList<>();
+            data.add("Pradhan Mantri Swasthya Suraksha Yojana (PMSSY)");
+            data.add("http://vikaspedia.in/health/nrhm/national-health-programmes-1/pradhan-mantri-swasthya-suraksha-yojana-pmssy");
+            String data1= TextUtils.join("\n",data);
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT,data1);
+            startActivity(intent);
+
+        }
+        else if(v.getId()==R.id.documentation2){
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            Uri uri=Uri.parse("http://vikaspedia.in/health/nrhm/national-health-mission/national-rural-health-mission-nrhm");
+            intent.setData(uri);
+            startActivity(intent);
+
+        }
+        else if(v.getId()==R.id.share2){
+            ArrayList<String> data=new ArrayList<>();
+            data.add("National Rural Health Mission (NRHM)");
+            data.add("http://vikaspedia.in/health/nrhm/national-health-mission/national-rural-health-mission-nrhm");
+            String data1= TextUtils.join("\n",data);
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT,data1);
+            startActivity(intent);
+
+
+        }
+        else if(v.getId()==R.id.documentation3){
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            Uri uri=Uri.parse("http://vikaspedia.in/social-welfare/unorganised-sector-1/schemes-unorganised-sector/rashtriya-swasthya-bima-yojana");
+            intent.setData(uri);
+            startActivity(intent);
+        }
+        else if(v.getId()==R.id.share3){
+            ArrayList<String> data=new ArrayList<>();
+            data.add("Rashtriya Swasthya Bima Yojana");
+            data.add("http://vikaspedia.in/social-welfare/unorganised-sector-1/schemes-unorganised-sector/rashtriya-swasthya-bima-yojana");
+            String data1= TextUtils.join("\n",data);
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT,data1);
+            startActivity(intent);
+
+        }
+
+
+
+
     }
 }
 

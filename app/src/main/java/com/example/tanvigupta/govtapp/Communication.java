@@ -2,21 +2,27 @@ package com.example.tanvigupta.govtapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 
-public class Communication extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class Communication extends AppCompatActivity implements View.OnClickListener {
 
     private ViewFlipper f,f2,f3;
     private CardView c,d,e,k,l,m;
     private Button b1,b2,b3;
     private AlertDialog.Builder alert;
+    private ImageButton documentation1,share1,documentation2,share2,documentation3,share3;
 
 
     @Override
@@ -71,6 +77,18 @@ public class Communication extends AppCompatActivity {
                 p5();
             }
         });
+        documentation1=findViewById(R.id.documentation1);
+        share1=findViewById(R.id.share1);
+        documentation2=findViewById(R.id.documentation2);
+        share2=findViewById(R.id.share2);
+        documentation3=findViewById(R.id.documentation3);
+        share3=findViewById(R.id.share3);
+        documentation1.setOnClickListener(this);
+        share1.setOnClickListener(this);
+        documentation2.setOnClickListener(this);
+        share2.setOnClickListener(this);
+        documentation3.setOnClickListener(this);
+        share3.setOnClickListener(this);
 
         alert = new AlertDialog.Builder(this);
 
@@ -257,4 +275,71 @@ public class Communication extends AppCompatActivity {
         f3.showPrevious();
     }
 
+    @Override
+    public void onClick(View v) {
+
+        if(v.getId()==R.id.documentation1){
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            Uri uri=Uri.parse("http://www.dst.gov.in/general-information-research-and-development-funding-schemes-central-government-departments-agencies");
+            intent.setData(uri);
+            startActivity(intent);
+
+        }
+        else if(v.getId()==R.id.share1){
+            ArrayList<String> data=new ArrayList<>();
+            data.add("R & D Funding scheme");
+            data.add("http://www.dst.gov.in/general-information-research-and-development-funding-schemes-central-government-departments-agencies");
+            String data1= TextUtils.join("\n",data);
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT,data1);
+            startActivity(intent);
+
+        }
+        else if(v.getId()==R.id.documentation2){
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            Uri uri=Uri.parse("http://meity.gov.in/content/technology-incubation-and-development-entrepreneurs");
+            intent.setData(uri);
+            startActivity(intent);
+
+        }
+        else if(v.getId()==R.id.share2){
+            ArrayList<String> data=new ArrayList<>();
+            data.add("TIDE schemes");
+            data.add("http://meity.gov.in/content/technology-incubation-and-development-entrepreneurs");
+            String data1= TextUtils.join("\n",data);
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT,data1);
+            startActivity(intent);
+
+
+        }
+        else if(v.getId()==R.id.documentation3){
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            Uri uri=Uri.parse("https://www.mapsofindia.com/my-india/government/mnrega-progress-made-by-modi-government-in-one-year");
+            intent.setData(uri);
+            startActivity(intent);
+        }
+        else if(v.getId()==R.id.share3){
+            ArrayList<String> data=new ArrayList<>();
+            data.add(" MG Schemes");
+            data.add("https://www.mapsofindia.com/my-india/government/mnrega-progress-made-by-modi-government-in-one-year");
+            String data1= TextUtils.join("\n",data);
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT,data1);
+            startActivity(intent);
+
+        }
+
+
+
+    }
 }

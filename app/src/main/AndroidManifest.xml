@@ -15,7 +15,7 @@
         <activity android:name=".Transport" />
         <activity android:name=".Education" />
         <activity android:name=".Health" />
-        <activity android:name=".rural" />
+        <activity android:name=".Rural" />
         <activity android:name=".Commercial" />
         <activity android:name=".Communication" />
         <activity

@@ -2,20 +2,26 @@ package com.example.tanvigupta.govtapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ViewFlipper;
 
-public class Commercial extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class Commercial extends AppCompatActivity implements View.OnClickListener {
 
     private ViewFlipper f,f2,f3;
     private CardView c,d,e,k,l,m;
     private Button b1,b2,b3;
     private AlertDialog.Builder alert;
+    private ImageButton documentation1,share1,documentation2,share2,documentation3,share3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +75,18 @@ public class Commercial extends AppCompatActivity {
                 p5();
             }
         });
+        documentation1=findViewById(R.id.documentation1);
+        share1=findViewById(R.id.share1);
+        documentation2=findViewById(R.id.documentation2);
+        share2=findViewById(R.id.share2);
+        documentation3=findViewById(R.id.documentation3);
+        share3=findViewById(R.id.share3);
+        documentation1.setOnClickListener(this);
+        share1.setOnClickListener(this);
+        documentation2.setOnClickListener(this);
+        share2.setOnClickListener(this);
+        documentation3.setOnClickListener(this);
+        share3.setOnClickListener(this);
 
         alert = new AlertDialog.Builder(this);
 
@@ -246,5 +264,72 @@ public class Commercial extends AppCompatActivity {
         f3.setInAnimation(this,R.anim.in_left);
         f3.setOutAnimation(this,R.anim.out_right);
         f3.showPrevious();
+    }
+
+    @Override
+    public void onClick(View v) {
+        if(v.getId()==R.id.documentation1){
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            Uri uri=Uri.parse("http://pib.nic.in/newsite/PrintRelease.aspx?relid=184110");
+            intent.setData(uri);
+            startActivity(intent);
+
+        }
+        else if(v.getId()==R.id.share1){
+            ArrayList<String> data=new ArrayList<>();
+            data.add("Scheme For Leather Industry");
+            data.add("http://pib.nic.in/newsite/PrintRelease.aspx?relid=184110");
+            String data1= TextUtils.join("\n",data);
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT,data1);
+            startActivity(intent);
+
+        }
+        else if(v.getId()==R.id.documentation2){
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            Uri uri=Uri.parse("http://pib.nic.in/newsite/PrintRelease.aspx?relid=120056");
+            intent.setData(uri);
+            startActivity(intent);
+
+        }
+        else if(v.getId()==R.id.share2){
+            ArrayList<String> data=new ArrayList<>();
+            data.add("Scheme for small and medium Exporters");
+            data.add("http://pib.nic.in/newsite/PrintRelease.aspx?relid=120056");
+            String data1= TextUtils.join("\n",data);
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT,data1);
+            startActivity(intent);
+
+
+        }
+        else if(v.getId()==R.id.documentation3){
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            Uri uri=Uri.parse("https://www.entrepreneur.com/article/252342");
+            intent.setData(uri);
+            startActivity(intent);
+        }
+        else if(v.getId()==R.id.share3){
+            ArrayList<String> data=new ArrayList<>();
+            data.add("Svhemes for Small Exporters");
+            data.add("https://www.entrepreneur.com/article/252342");
+            String data1= TextUtils.join("\n",data);
+            Intent intent=new Intent();
+            intent.setAction(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_TEXT,data1);
+            startActivity(intent);
+
+        }
+
+
+
     }
 }
